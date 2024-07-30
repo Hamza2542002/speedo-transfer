@@ -1,0 +1,17 @@
+<div
+  class="user"
+  (click)="toggleDropdown()"
+  appClickOutside
+  (clickOutside)="closeDropdown()"
+>
+  <img class="user-image" [src]="user.image" alt="" />
+  <p class="sb text-grey-700">{{ user.name }}</p>
+  <mat-icon aria-label="Dropdown arrow" fontIcon="expand_more"></mat-icon>
+  <ul *ngIf="isDropdownOpen" class="dropdown-content">
+    <li><a class="text-grey-700" href="">My Account</a></li>
+    <li><a class="text-grey-700" href="">Payment History</a></li>
+    <li><a class="text-grey-700" href="">Setting</a></li>
+    <li><a class="text-grey-700" href="">Change Password</a></li>
+    <li><a class="text-grey-700" href="">Logout</a></li>
+  </ul>
+</div>
