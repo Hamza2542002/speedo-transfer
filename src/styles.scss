@@ -7,12 +7,14 @@
 
 ul {
   list-style: none;
+  padding: 10px 5px;
 }
 
 a {
   text-decoration: null;
 }
 
+//Typography
 h1 {
   font-size: 64px;
 }
@@ -30,6 +32,9 @@ h2,
 h3 {
   font-weight: 600;
 }
+p {
+  font-size: 20px;
+}
 
 p.tilte-sm-0 {
   font-size: 32px;
@@ -37,4 +42,257 @@ p.tilte-sm-0 {
 
 p.tilte-sm-2 {
   font-size: 24px;
+}
+
+p.body {
+  font-size: 16px;
+}
+
+p.body-2 {
+  font-size: 14px;
+}
+
+p.body-m {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+p.sm {
+  font-weight: 12px;
+}
+
+h1,
+h2,
+h3,
+p {
+  line-height: 150%;
+}
+
+// Colors
+
+// primary
+$color-primary-50: #f3e9eb;
+$color-primary-75: #cea3ac;
+$color-primary-100: #b97d8a;
+$color-primary-200: #9b4457;
+$color-primary-300: #871e35;
+$color-primary-400: #5f1525;
+$color-primary-500: #521220;
+
+// secondary
+$color-secondary-50: #fcf7e9;
+$color-secondary-75: #f4dda3;
+$color-secondary-100: #efcf7d;
+$color-secondary-200: #e8ba44;
+$color-secondary-300: #e3ac1e;
+$color-secondary-400: #9f7815;
+$color-secondary-500: #8a6912;
+
+// danger
+$color-danger-200: #ff2b52;
+$color-danger-300: #ff002e;
+
+// grey
+$color-grey-0: #ffffff;
+$color-grey-10: #fbfbfb;
+$color-grey-20: #f6f6f6;
+$color-grey-30: #ededed;
+$color-grey-40: #e3e2e2;
+$color-grey-50: #c8c8c7;
+$color-grey-60: #bbbab9;
+$color-grey-70: #b0afae;
+$color-grey-80: #a3a2a1;
+$color-grey-90: #969593;
+$color-grey-100: #898886;
+$color-grey-200: #7c7a78;
+$color-grey-300: #6e6d6b;
+$color-grey-400: #64625f;
+$color-grey-500: #565552;
+$color-grey-600: #4b4a47;
+$color-grey-700: #3c3a37;
+$color-grey-800: #2f2d29;
+$color-grey-900: #24221e;
+
+// Primary colors
+$primary-colors: (
+  50: $color-primary-50,
+  75: $color-primary-75,
+  100: $color-primary-100,
+  200: $color-primary-200,
+  300: $color-primary-300,
+  400: $color-primary-400,
+  500: $color-primary-500,
+);
+
+// Secondary colors
+$secondary-colors: (
+  50: $color-secondary-50,
+  75: $color-secondary-75,
+  100: $color-secondary-100,
+  200: $color-secondary-200,
+  300: $color-secondary-300,
+  400: $color-secondary-400,
+  500: $color-secondary-500,
+);
+
+// Danger colors
+$danger-colors: (
+  200: $color-danger-200,
+  300: $color-danger-300,
+);
+
+// Grey colors
+$grey-colors: (
+  0: $color-grey-0,
+  10: $color-grey-10,
+  20: $color-grey-20,
+  30: $color-grey-30,
+  40: $color-grey-40,
+  50: $color-grey-50,
+  60: $color-grey-60,
+  70: $color-grey-70,
+  80: $color-grey-80,
+  90: $color-grey-90,
+  100: $color-grey-100,
+  200: $color-grey-200,
+  300: $color-grey-300,
+  400: $color-grey-400,
+  500: $color-grey-500,
+  600: $color-grey-600,
+  700: $color-grey-700,
+  800: $color-grey-800,
+  900: $color-grey-900,
+);
+
+// Loop to generate text color classes
+@each $name, $color in $primary-colors {
+  .text-primary-#{$name} {
+    color: $color;
+  }
+}
+
+@each $name, $color in $secondary-colors {
+  .text-secondary-#{$name} {
+    color: $color;
+  }
+}
+
+@each $name, $color in $danger-colors {
+  .text-danger-#{$name} {
+    color: $color;
+  }
+}
+
+@each $name, $color in $grey-colors {
+  .text-grey-#{$name} {
+    color: $color;
+  }
+}
+@each $name, $color in $primary-colors {
+  .bg-primary-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $secondary-colors {
+  .bg-secondary-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $danger-colors {
+  .bg-danger-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $grey-colors {
+  .bg-grey-#{$name} {
+    background-color: $color;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+button.btn-primary {
+  background-color: $color-primary-300;
+  color: $color-grey-0;
+  border: 1px solid $color-primary-300;
+}
+
+button.btn-outlined {
+  background-color: $color-grey-0;
+  color: $color-grey-900;
+  border: 1px solid $color-grey-900;
+}
+
+.btn-link {
+  color: $color-primary-300;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 920px;
+  }
+}
+
+.container-fluid {
+  padding: 0 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .container-fluid {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container-fluid {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-fluid {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1600px;
+  }
 }
