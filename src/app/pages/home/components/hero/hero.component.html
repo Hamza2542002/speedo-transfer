@@ -1,0 +1,61 @@
+<section class="hero">
+  <span class="overlay"></span>
+  <div class="container-fluid">
+    <div class="first-g text-grey-0">
+      <div class="text">
+        <p class="">Simple. Quick. Secure.</p>
+        <h1 class="hero-header">
+          Send Money <br />
+          Anywhere, Instantly
+        </h1>
+        <p class="rg">
+          Fast, secure, and affordable international money <br />
+          transfers. Get started in minutes
+        </p>
+      </div>
+      <button class="btn-primary body">Create An Account</button>
+    </div>
+    <form action="" class="form bg-grey-0">
+      <div class="your-sent">
+        <label for="">You Send</label>
+        <div class="input-group">
+          <input
+            (change)="getCurrency($event)"
+            type="text"
+            class="body text-grey-100"
+            placeholder="1000"
+          />
+          <app-custome-select
+            [default]="fromCurrency"
+            (selected)="onSelectFromCurrency($event)"
+          ></app-custome-select>
+        </div>
+      </div>
+      <div class="recipient">
+        <label for="">Recipient gets</label>
+        <div class="input-group">
+          <input
+            type="text"
+            [value]="ammount.toFixed(2)"
+            class="body text-grey-100"
+            placeholder="7200"
+          />
+          <app-custome-select
+            [default]="toCurrency"
+            (selected)="onSelectToCurrency($event)"
+          ></app-custome-select>
+        </div>
+      </div>
+      <p class="body text-grey-100 date">
+        Delivery Time: <span class="text-grey-700">By {{ currentDate }}th</span>
+      </p>
+      <button
+        type="submit"
+        class="btn-primary body md"
+        (click)="routeToMonyrTransfer()"
+      >
+        Continue
+      </button>
+    </form>
+  </div>
+</section>

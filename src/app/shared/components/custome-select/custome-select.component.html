@@ -1,0 +1,31 @@
+<div class="custom-select body text-grey-400" (click)="toggleDropdown()">
+  <div class="selected-option text-grey-700 bg-grey-40">
+    <img [src]="default.img" alt="" />
+    {{ default.label || selectedCurrency.label }}
+    <mat-icon
+      *ngIf="!isDropdownOpen"
+      aria-label="Dropdown arrow"
+      fontIcon="expand_more"
+    ></mat-icon>
+    <mat-icon
+      *ngIf="isDropdownOpen"
+      aria-label="Dropdown arrow"
+      fontIcon="expand_less"
+    ></mat-icon>
+  </div>
+  <div
+    appClickOutside
+    (clickOutside)="closeDropdown()"
+    *ngIf="isDropdownOpen"
+    class="dropdown-options"
+  >
+    <div
+      class="bg-grey-0"
+      *ngFor="let currency of currencies"
+      (click)="selectCurrency(currency)"
+    >
+      <img [src]="currency.img" alt="" />
+      {{ currency.label }}
+    </div>
+  </div>
+</div>
