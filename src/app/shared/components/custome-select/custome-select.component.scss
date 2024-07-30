@@ -1,0 +1,61 @@
+@import "../../../../styles/variables";
+.custom-select {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.selected-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  gap: 5px;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 98px;
+
+  img {
+    margin-right: 8px;
+  }
+}
+
+.dropdown-options {
+  position: absolute;
+  border: 1px solid #e5e5e5;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  padding: 5px 0;
+  width: 100%;
+  top: 100%;
+  transform: translateY(-10px);
+
+  div {
+    padding: 16px 8px;
+    max-width: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+    .img {
+      background-image: url("../../../../assets/Vectors/flags/states.svg");
+      width: 17px;
+      height: 17px !important;
+      background-repeat: no-repeat;
+      align-self: center;
+      padding: 0;
+    }
+  }
+}
+
+.img {
+  background-image: url("../../../../assets/Vectors/flags/states.png");
+  width: 17px;
+  height: 17px !important;
+  background-repeat: no-repeat;
+}

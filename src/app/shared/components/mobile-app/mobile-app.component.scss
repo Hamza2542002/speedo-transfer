@@ -1,0 +1,50 @@
+.mobile-app {
+  padding: 64px 0;
+
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .image {
+      border-radius: 8px;
+      width: 45%;
+      img {
+        border-radius: 8px;
+        max-width: 100%;
+      }
+    }
+
+    .section-body {
+      width: 50%;
+      padding: 15px;
+      & > p {
+        margin-top: 20px;
+      }
+
+      ul {
+        li {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 20px;
+          margin: 20px 0;
+        }
+      }
+
+      .store {
+        display: flex;
+        gap: 20px;
+      }
+    }
+    @media screen and (max-width: 1300px) {
+      .section-body {
+        width: 100%;
+      }
+      .image {
+        display: none;
+      }
+    }
+  }
+}

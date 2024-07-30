@@ -1,3 +1,4 @@
+@import "../../../../styles/variables";
 header {
   padding: 16px 0;
 
@@ -17,6 +18,10 @@ header {
 
         li a {
           padding: 0 16px;
+        }
+
+        li a.active {
+          color: $color-primary-300 !important;
         }
       }
     }

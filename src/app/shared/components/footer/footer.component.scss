@@ -1,0 +1,22 @@
+@import "../../../../styles/variables";
+footer {
+  text-align: center;
+
+  .footer-body {
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid $color-grey-300;
+
+    .contact {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  .rights {
+    padding: 20px 0;
+  }
+}

@@ -1,0 +1,50 @@
+.getting-started {
+  padding: 64px 0;
+  margin: 0 auto;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .heading {
+      text-align: center;
+      width: 70%;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
+
+      .card {
+        flex-grow: 1;
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .card-image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+        }
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
