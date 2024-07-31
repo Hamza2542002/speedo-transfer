@@ -1,0 +1,22 @@
+.messgae-cont {
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 550px;
+  margin: 0 auto;
+
+  p {
+    text-align: center;
+    width: 50%;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  .cancel {
+    cursor: pointer;
+  }
+}

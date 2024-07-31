@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   user!: UserComponent;
+  showForm = false;
   constructor(private readonly router: Router) {}
 
   routeToRegester() {
