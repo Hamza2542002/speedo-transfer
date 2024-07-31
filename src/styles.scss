@@ -54,6 +54,7 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .text-underline {
@@ -85,11 +86,11 @@ p {
 }
 
 .md {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .rg {
-  font-weight: 200;
+  font-weight: 300;
   font-size: 1rem; /* 16px is 1rem */
 }
 

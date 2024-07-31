@@ -1,0 +1,100 @@
+<div class="select-g" *ngIf="type == 'month'">
+  <label (click)="toggleDropdown()" class="body text-grey-700"> Month </label>
+  <div class="custom-select body text-grey-400" (click)="toggleDropdown()">
+    <div class="selected-option text-grey-700 bg-grey-0">
+      {{ slectedMonth }}
+      <mat-icon
+        *ngIf="!isDropdownOpen"
+        aria-label="Dropdown arrow"
+        fontIcon="expand_more"
+      ></mat-icon>
+      <mat-icon
+        *ngIf="isDropdownOpen"
+        aria-label="Dropdown arrow"
+        fontIcon="expand_less"
+      ></mat-icon>
+    </div>
+    <div
+      appClickOutside
+      (clickOutside)="closeDropdown()"
+      *ngIf="isDropdownOpen"
+      class="dropdown-options"
+    >
+      <div
+        class="bg-grey-0"
+        *ngFor="let month of months"
+        (click)="selectMonth(month)"
+      >
+        {{ month.name }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="select-g" *ngIf="type == 'year'">
+  <label (click)="toggleDropdown()" class="body text-grey-700"> Year </label>
+  <div class="custom-select body text-grey-400" (click)="toggleDropdown()">
+    <div class="selected-option text-grey-700 bg-grey-0">
+      {{ slectedYear }}
+      <mat-icon
+        *ngIf="!isDropdownOpen"
+        aria-label="Dropdown arrow"
+        fontIcon="expand_more"
+      ></mat-icon>
+      <mat-icon
+        *ngIf="isDropdownOpen"
+        aria-label="Dropdown arrow"
+        fontIcon="expand_less"
+      ></mat-icon>
+    </div>
+    <div
+      appClickOutside
+      (clickOutside)="closeDropdown()"
+      *ngIf="isDropdownOpen"
+      class="dropdown-options"
+    >
+      <div
+        class="bg-grey-0"
+        *ngFor="let year of years"
+        (click)="selectYear(year)"
+      >
+        {{ year }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="select-g" *ngIf="type == 'country'">
+  <label (click)="toggleDropdown()" class="body text-grey-700 md">
+    Country
+  </label>
+  <div class="custom-select body text-grey-400" (click)="toggleDropdown()">
+    <div class="selected-option text-grey-700 bg-grey-0">
+      {{ slectedCountry }}
+      <mat-icon
+        *ngIf="!isDropdownOpen"
+        aria-label="Dropdown arrow"
+        fontIcon="expand_more"
+      ></mat-icon>
+      <mat-icon
+        *ngIf="isDropdownOpen"
+        aria-label="Dropdown arrow"
+        fontIcon="expand_less"
+      ></mat-icon>
+    </div>
+    <div
+      appClickOutside
+      (clickOutside)="closeDropdown()"
+      *ngIf="isDropdownOpen"
+      class="dropdown-options"
+    >
+      <div
+        class="bg-grey-0"
+        *ngFor="let country of countries"
+        (click)="selectCountry(country)"
+      >
+        {{ country }}
+      </div>
+    </div>
+  </div>
+</div>

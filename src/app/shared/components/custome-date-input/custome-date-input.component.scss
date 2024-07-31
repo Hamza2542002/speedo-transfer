@@ -7,13 +7,11 @@
 .selected-option {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 12px 8px;
   gap: 5px;
   border-radius: 8px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  width: 98px;
-
+  border: 1px solid #e5e5e5;
   img {
     margin-right: 8px;
   }
@@ -30,11 +28,16 @@
   width: 100%;
   top: 100%;
   transform: translateY(-10px);
+  max-height: 350px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
 
   div {
     padding: 16px 8px;
-    max-width: 98px;
-    display: flex;
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
@@ -52,9 +55,9 @@
     }
   }
 }
-.img {
-  background-image: url("../../../../assets/Vectors/flags/states.png");
-  width: 17px;
-  height: 17px !important;
-  background-repeat: no-repeat;
+
+.select-g {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

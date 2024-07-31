@@ -1,1 +1,188 @@
-<p>register works!</p>
+<div class="register bg-grey-0">
+  <main>
+    <header class="register-header">
+      <p class="title-sm-0 sb">Speedo Transfer</p>
+      <img
+        src="../../../assets/Icons(SVG)/cancel.svg"
+        class="text-grey-900 close-icon"
+        alt=""
+        (click)="closeForm()"
+      />
+    </header>
+    <div class="register-content">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" action="">
+        <div class="form-header">
+          <p class="title-sm-2 sb text-grey-900">Create Your Account</p>
+          <p class="rg text-gery-500 body">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            eiusmod tempor incididunt ut labore.
+          </p>
+        </div>
+        <div class="input-container">
+          <div class="input-group">
+            <label class="body text-grey-700 md">User name</label>
+            <input
+              formControlName="userName"
+              required
+              class="input text-grey-100"
+              type="text"
+              placeholder="User Name"
+              userName
+            />
+            <div *ngIf="registerForm.controls['userName'].invalid && submitted">
+              <small
+                *ngIf="registerForm.controls['userName'].errors?.['required']"
+                class="text-danger-300"
+                >User Name is required.</small
+              >
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="body text-grey-700 md">Your email address</label>
+            <input
+              formControlName="email"
+              required
+              class="input text-grey-100"
+              type="email"
+              placeholder="Email@gmail.com"
+              email
+            />
+            <div *ngIf="registerForm.controls['email'].invalid && submitted">
+              <small
+                *ngIf="registerForm.controls['email'].errors?.['required']"
+                class="text-danger-300"
+                >Email is required.</small
+              >
+              <small
+                *ngIf="registerForm.controls['email'].errors?.['email']"
+                class="text-danger-300"
+                >Invalid email address.</small
+              >
+            </div>
+          </div>
+          <div class="input-group">
+            <app-custome-date-input
+              (selectedCountry)="registerForm.get('country')?.setValue($event)"
+              type="country"
+            ></app-custome-date-input>
+          </div>
+          <div class="input-group">
+            <label class="body text-grey-700 md">Date of Birth</label>
+            <div class="date-select">
+              <div class="date">
+                <div class="select-g">
+                  <label class="body text-grey-700">Day</label>
+                  <input
+                    formControlName="day"
+                    type="text"
+                    placeholder="DD"
+                    class="input text-grey-100"
+                  />
+                </div>
+                <app-custome-date-input
+                  (selectedMonth)="registerForm.get('month')?.setValue($event)"
+                  type="month"
+                ></app-custome-date-input>
+                <app-custome-date-input
+                  (selectedYear)="registerForm.get('year')?.setValue($event)"
+                  type="year"
+                ></app-custome-date-input>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="body text-grey-700 md">Password</label>
+            <div class="pass-cont">
+              <input
+                formControlName="password"
+                class="input text-grey-100"
+                [type]="isPasswordVisible ? 'text' : 'password'"
+                placeholder="********"
+                password
+              />
+              <img
+                *ngIf="!isPasswordVisible"
+                class="pass-icon"
+                src="../../../assets/Icons(SVG)/Close-eye.svg"
+                alt=""
+                (click)="togglePassword()"
+              />
+              <img
+                *ngIf="isPasswordVisible"
+                (click)="togglePassword()"
+                class="pass-icon"
+                src="../../../assets/Icons(SVG)/Open-eye.svg"
+                alt=""
+              />
+            </div>
+            <div *ngIf="registerForm.controls['password'].invalid && submitted">
+              <small
+                *ngIf="registerForm.controls['password'].errors?.['required']"
+                class="text-danger-300"
+                >Password is required.</small
+              >
+              <small
+                *ngIf="
+                  registerForm.controls['password']?.hasError('strongPassword')
+                "
+                class="text-danger-300"
+                >Password must be at least 8 characters long, include upper and
+                lower case letters, a number, and a special character.</small
+              >
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="body text-grey-700 md">Confirm Password</label>
+            <div class="pass-cont">
+              <input
+                formControlName="confirmPassword"
+                class="input text-grey-100"
+                (input)="confirmPassword()"
+                [type]="isPasswordVisible1 ? 'text' : 'password'"
+                placeholder="********"
+                password
+              />
+              <img
+                *ngIf="!isPasswordVisible1"
+                class="pass-icon"
+                src="../../../assets/Icons(SVG)/Close-eye.svg"
+                alt=""
+                (click)="togglePassword1()"
+              />
+              <img
+                *ngIf="isPasswordVisible1"
+                (click)="togglePassword1()"
+                class="pass-icon"
+                src="../../../assets/Icons(SVG)/Open-eye.svg"
+                alt=""
+              />
+            </div>
+            <div *ngIf="registerForm.controls['password'].invalid && submitted">
+              <small
+                *ngIf="registerForm.controls['password'].errors?.['required']"
+                class="text-danger-300"
+                >Password is required.</small
+              >
+            </div>
+            <small *ngIf="errorMessage" class="text-danger-300">{{
+              errorMessage
+            }}</small>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary body">Create Account</button>
+        <p class="text-grey-500 body">
+          Already have an account?
+          <a
+            [routerLink]="['/login']"
+            class="text-primary-300 text-underline md"
+            >Login</a
+          >
+        </p>
+      </form>
+    </div>
+  </main>
+  <p class="register-footer body md text-grey-900 bg-primary-50">
+    ©Speedo Transfer Payments Limited 2024
+  </p>
+</div>
