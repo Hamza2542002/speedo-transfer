@@ -2,10 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { ClickOutsideDirective } from '../../directives/click-outside.directive';
-type Currency = {
-  label: string;
-  img: string;
-};
+import { CurrencyModule } from '../../../model/currency/currency.module';
+
 @Component({
   selector: 'app-custome-select',
   standalone: true,
@@ -14,11 +12,11 @@ type Currency = {
   styleUrl: './custome-select.component.scss',
 })
 export class CustomeSelectComponent {
-  @Output() selected: EventEmitter<Currency> = new EventEmitter();
-  @Input() default!: Currency;
+  @Output() selected: EventEmitter<CurrencyModule> = new EventEmitter();
+  @Input() default!: CurrencyModule;
 
   isDropdownOpen = false;
-  selectedCurrency: Currency = {
+  selectedCurrency: CurrencyModule = {
     label: 'USD',
     img: '../../../../assets/Vectors/flags/states.svg',
   };
@@ -37,7 +35,7 @@ export class CustomeSelectComponent {
     this.isDropdownOpen = false;
   }
 
-  selectCurrency(currency: Currency) {
+  selectCurrency(currency: CurrencyModule) {
     this.selectedCurrency = currency;
     this.selected.emit(currency);
     this.closeDropdown();

@@ -1,9 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 const API_KEY = 'fca_live_kIr9X5MzTgADAmr6FUuXDYbno06FEtdGU60z3Lwo';
 const API_URL = 'https://api.freecurrencyapi.com/v1/latest';
-('https://api.freecurrencyapi.com/v1/latest?apikey=&currencies=EUR&base_currency=RON');
 @Injectable({
   providedIn: 'root',
 })

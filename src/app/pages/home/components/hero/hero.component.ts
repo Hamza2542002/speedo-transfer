@@ -3,10 +3,8 @@ import { Component } from '@angular/core';
 import { CustomeSelectComponent } from '../../../../shared/components/custome-select/custome-select.component';
 import { Router } from '@angular/router';
 import { CurrencyService } from '../../../../services/currency.service';
-type Currency = {
-  label: string;
-  img: string;
-};
+import { CurrencyModule } from '../../../../model/currency/currency.module';
+
 @Component({
   selector: 'app-hero',
   standalone: true,
@@ -15,11 +13,11 @@ type Currency = {
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent {
-  fromCurrency: Currency = {
+  fromCurrency: CurrencyModule = {
     label: 'USD',
     img: '../../../../assets/Vectors/flags/states.svg',
   };
-  toCurrency: Currency = {
+  toCurrency: CurrencyModule = {
     label: 'EGP',
     img: '../../../../assets/Vectors/flags/egypt.svg',
   };
@@ -34,10 +32,10 @@ export class HeroComponent {
     private readonly currencuService: CurrencyService,
   ) {}
 
-  onSelectFromCurrency(currency: Currency) {
+  onSelectFromCurrency(currency: CurrencyModule) {
     this.fromCurrency = currency;
   }
-  onSelectToCurrency(currency: Currency) {
+  onSelectToCurrency(currency: CurrencyModule) {
     this.toCurrency = currency;
   }
 
