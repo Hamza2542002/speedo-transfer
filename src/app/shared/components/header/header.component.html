@@ -9,12 +9,22 @@
             routerLink="/home"
             routerLinkActive="active"
             class="text-grey-700 body-m"
-            href=""
             >Home</a
           >
         </li>
-        <li><a class="text-grey-700 body-m" href="">Money Transfer</a></li>
-        <li><a class="text-grey-700 body-m" href="">My Account</a></li>
+        <li>
+          <a
+            class="text-grey-700 body-m"
+            routerLinkActive="active"
+            routerLink="/moneytransfer"
+            >Money Transfer</a
+          >
+        </li>
+        <li>
+          <a class="text-grey-700 body-m" routerLinkActive="active" href=""
+            >My Account</a
+          >
+        </li>
       </ul>
       <div *ngIf="!user" class="btn-group">
         <button class="btn-outlined" (click)="routToLogin()">Login</button>

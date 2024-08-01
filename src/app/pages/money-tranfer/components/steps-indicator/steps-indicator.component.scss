@@ -1,0 +1,75 @@
+@import "../../../../../styles/variables.scss";
+.step-indicator {
+  display: flex;
+  align-items: center;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 20px 0;
+
+  a {
+    display: flex;
+  }
+  .active span {
+    color: $color-primary-300 !important;
+    border-color: $color-primary-300 !important;
+  }
+  .active .line {
+    background-color: $color-primary-300 !important;
+  }
+  .active p {
+    color: $color-grey-900 !important;
+  }
+}
+
+.step {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.step.active {
+  p,
+  span {
+    color: $color-primary-300 !important;
+    border-color: $color-primary-300 !important;
+  }
+  p {
+    color: $color-grey-900 !important;
+  }
+}
+
+.step span {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid $color-grey-100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step p {
+  margin: 0;
+}
+
+.separator {
+  width: 70px;
+  align-self: flex-start;
+  padding: 20px 0;
+}
+
+.line {
+  display: block;
+  height: 2px;
+  background-color: $color-grey-100;
+  margin: 0 10px;
+}
+
+.separator.active {
+  span {
+    background-color: $color-primary-300;
+  }
+}

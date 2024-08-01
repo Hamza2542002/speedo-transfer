@@ -1,0 +1,60 @@
+.first-step {
+  text-align: center;
+
+  .first-step-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .form {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    border-radius: 8px;
+    gap: 16px;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .recipient-info {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      position: relative;
+      app-favorites {
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        right: 0;
+      }
+
+      .favorites {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        cursor: pointer;
+      }
+    }
+    .input-group {
+      display: flex;
+
+      input {
+        width: 100%;
+        padding: 12px;
+        padding-left: 15px;
+        outline: none;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}

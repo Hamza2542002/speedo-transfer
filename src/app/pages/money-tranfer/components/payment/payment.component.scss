@@ -1,0 +1,85 @@
+@import "../../../../../styles/variables";
+.confirmation {
+  .confirmation-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    mat-icon {
+      background-color: #c36565;
+      font-size: 70px;
+      padding: 15px;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 50%;
+    }
+  }
+
+  .confirmation-body {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .ammount {
+      padding: 15px 0;
+      border-bottom: 1px solid $color-grey-40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .fees {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 15px;
+        border-radius: 45px;
+      }
+    }
+    .trnsaction-info {
+      .from,
+      .to {
+        padding: 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin: 10px 0;
+
+        .image {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .indiv-info {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+
+      .icons {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      button {
+        padding: 12px 0;
+      }
+    }
+  }
+}
