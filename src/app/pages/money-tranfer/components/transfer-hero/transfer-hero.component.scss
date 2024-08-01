@@ -1,0 +1,56 @@
+@import "../../../../../styles/variables";
+.hero {
+  padding: 100px 0;
+  background-color: antiquewhite;
+  background-image: url("../../../../../assets/img/Breadcrumb\ img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .overlay {
+    opacity: 0.5;
+  }
+
+  .container-fluid {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+      img {
+        display: none;
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+
+      li {
+        a.active {
+          color: $color-primary-300 !important;
+          span {
+            background-color: $color-primary-300 !important;
+          }
+        }
+        a {
+          display: flex;
+          justify-content: flex-start;
+          gap: 5px;
+          align-items: center;
+
+          span {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

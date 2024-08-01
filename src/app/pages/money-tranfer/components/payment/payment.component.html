@@ -1,0 +1,56 @@
+<div class="confirmation">
+  <div class="confirmation-header">
+    <mat-icon class="text-grey-0">check</mat-icon>
+    <p class="title-2 sb text-grey-900">Your transfer was successful</p>
+    <h2 class="text-grey-900">
+      48.4220 <span class="text-primary-300">EGP</span>
+    </h2>
+  </div>
+  <div class="confirmation-body">
+    <div class="trnsaction-info">
+      <div class="from bg-grey-20">
+        <div class="image bg-grey-40">
+          <mat-icon>account_balance</mat-icon>
+        </div>
+        <div class="indiv-info">
+          <p class="body text-primary-300">From</p>
+          <p class="name body sb text-grey-700">Jonathon Smith</p>
+          <p class="account body-2 text-grey-100">Account xxxx7890</p>
+        </div>
+      </div>
+      <div class="icons">
+        <img src="../../../../../assets/Icons(SVG)/transfer.svg" alt="" />
+      </div>
+      <div class="to bg-grey-20">
+        <div class="image bg-grey-40">
+          <mat-icon>account_balance</mat-icon>
+        </div>
+        <div class="indiv-info">
+          <p class="body text-primary-300">From</p>
+          <p class="name body sb text-grey-700">Asmaa Dosuky</p>
+          <p class="account body-2 text-grey-100">Account xxxx7890</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="ammount text-grey-500">
+        <p class="body text-grey-500">Total ammount</p>
+        <p class="body text-grey-500">48.4220 EGP</p>
+      </div>
+      <div class="ammount text-grey-500">
+        <p class="body text-grey-500">Fees</p>
+        <p class="body text-grey-500 fees bg-grey-40">
+          18.9 USD <mat-icon>chevron_right</mat-icon>
+        </p>
+      </div>
+    </div>
+    <div class="btns">
+      <button class="btn-primary body md" (click)="backHome()">
+        Back To Home
+      </button>
+      <button class="btn-outlined body md" (click)="addToFavorite()">
+        Add to favorite
+      </button>
+    </div>
+  </div>
+</div>

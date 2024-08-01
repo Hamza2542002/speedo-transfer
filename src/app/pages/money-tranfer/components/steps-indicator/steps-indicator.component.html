@@ -1,0 +1,40 @@
+<div class="step-indicator">
+  <a routerLink="/moneytransfer/ammount" routerLinkActive="active">
+    <div class="step">
+      <span class="body text-grey-100 sb">01</span>
+      <p class="body text-grey-600 sb">Ammount</p>
+    </div>
+  </a>
+  <a routerLink="/moneytransfer/confirmation" routerLinkActive="active">
+    <div class="separator">
+      <span class="line"></span>
+    </div>
+    <div class="step">
+      <span class="body text-grey-100 sb">02</span>
+      <p class="body text-grey-600 sb">Confirm</p>
+    </div>
+  </a>
+
+  <a routerLink="/moneytransfer/payment" routerLinkActive="active">
+    <div class="separator">
+      <span class="line"></span>
+    </div>
+    <div class="step">
+      <span class="body text-grey-100 sb">03</span>
+      <p class="body text-grey-600 sb">Payment</p>
+    </div>
+  </a>
+</div>
+<!-- <a routerLink="" *ngFor="let step of steps; let i = index">
+    <div [class.active]="i <= currentStep" class="step">
+      <span class="body text-grey-100 sb">0{{ i + 1 }}</span>
+      <p class="body text-grey-600 sb">{{ step }}</p>
+    </div>
+    <div
+      *ngIf="i < steps.length - 1"
+      [class.active]="i <= currentStep"
+      class="separator"
+    >
+      <span class="line"></span>
+    </div>
+  </a> -->

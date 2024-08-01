@@ -1,0 +1,174 @@
+<div class="first-step">
+  <div class="first-step-header">
+    <p class="title-2 sb">How much are you sending?</p>
+    <p class="body text-grey-500"> Rate guaranteed (2h)</p>
+    <p class="title-sm-2 sb text-grey-700">
+      1 {{ fromCurrency.label }} = {{ factor.toFixed(2) }}
+      {{ toCurrency.label }}
+    </p>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form bg-grey-0">
+    <div class="your-sent">
+      <label for="fromAmount">You Send</label>
+      <div class="input-group">
+        <input
+          formControlName="fromAmount"
+          type="text"
+          class="body text-grey-100"
+          placeholder="1000"
+          (change)="getCurrency($event)"
+        />
+        <app-custome-select
+          [default]="fromCurrency"
+          (selected)="onSelectFromCurrency($event)"
+        ></app-custome-select>
+      </div>
+    </div>
+
+    <div class="recipient">
+      <label for="toAmount">Recipient gets</label>
+      <div class="input-group">
+        <input
+          formControlName="toAmount"
+          type="text"
+          class="body text-grey-100"
+          placeholder="7200"
+          [value]="form.get('toAmount')?.value"
+        />
+        <app-custome-select
+          [default]="toCurrency"
+          (selected)="onSelectToCurrency($event)"
+        ></app-custome-select>
+      </div>
+    </div>
+
+    <div class="recipient-info">
+      <label>Recipient Information</label>
+      <p class="favorites" (click)="showFavorites = true">
+        <mat-icon class="text-primary-300">star_outline</mat-icon>
+        <span class="text-primary-300 rg body">Favourite</span>
+        <mat-icon class="text-primary-300">chevron_right</mat-icon>
+      </p>
+      <app-favorites
+        appClickOutside
+        (clickOutside)="showFavorites = false"
+        *ngIf="showFavorites"
+        (selected)="getRecipient($event)"
+        (showFav)="showFavorites = false"
+      ></app-favorites>
+    </div>
+
+    <div class="recipient">
+      <label for="recipientName">Recipient Name</label>
+      <div class="input-group">
+        <input
+          formControlName="recipientName"
+          type="text"
+          class="body text-grey-100"
+          placeholder="Recipient Name"
+        />
+      </div>
+    </div>
+
+    <div class="recipient">
+      <label for="recipientAccount">Recipient Account</label>
+      <div class="input-group">
+        <input
+          formControlName="recipientAccount"
+          type="text"
+          class="body text-grey-100"
+          placeholder="Recipient Account"
+        />
+      </div>
+    </div>
+
+    <p class="body text-grey-100 date">
+      Delivery Time: <span class="text-grey-700">By {{ currentDate }}th</span>
+    </p>
+    <button type="submit" class="btn-primary body md">Continue</button>
+  </form>
+</div>
+<!-- 
+  <form [formGroup]="form" action="" class="form bg-grey-0">
+    <div class="your-sent">
+      <label for="">You Send</label>
+      <div class="input-group">
+        <input
+          (change)="getCurrency($event)"
+          type="text"
+          class="body text-grey-100"
+          placeholder="1000"
+        />
+        <app-custome-select
+          [default]="fromCurrency"
+          (selected)="onSelectFromCurrency($event)"
+        ></app-custome-select>
+      </div>
+    </div>
+    <div class="recipient">
+      <label for="">Recipient gets</label>
+      <div class="input-group">
+        <input
+          type="text"
+          [value]="ammount.toFixed(2)"
+          class="body text-grey-100"
+          placeholder="7200"
+        />
+        <app-custome-select
+          [default]="toCurrency"
+          (selected)="onSelectToCurrency($event)"
+        ></app-custome-select>
+      </div>
+    </div>
+    <div class="recipient-info">
+      <label>Recipient Information</label>
+      <p class="favorites" (click)="showFavorites = true">
+        <mat-icon class="text-primary-300">star_outline</mat-icon>
+        <span class="text-primary-300 rg body">Favourite</span>
+        <mat-icon class="text-primary-300">chevron_right</mat-icon>
+      </p>
+      <app-favorites
+        appClickOutside
+        (clickOutside)="showFavorites = false"
+        *ngIf="showFavorites"
+        (selected)="recipient = $event"
+        (showFav)="showFavorites = false"
+      ></app-favorites>
+    </div>
+
+    <div class="recipient">
+      <label for="">Recipient Name</label>
+      <div class="input-group">
+        <input
+          type="text"
+          [value]="recipient.name"
+          class="body text-grey-100"
+          placeholder="7200"
+        />
+      </div>
+    </div>
+
+    <div class="recipient">
+      <label for="">Recipient Account</label>
+      <div class="input-group">
+        <input
+          type="text"
+          [value]="recipient.account"
+          class="body text-grey-100"
+          placeholder="7200"
+        />
+      </div>
+    </div>
+
+    <p class="body text-grey-100 date">
+      Delivery Time: <span class="text-grey-700">By {{ currentDate }}th</span>
+    </p>
+    <button
+      type="submit"
+      class="btn-primary body md"
+      (click)="routeToConfirmation()"
+    >
+      Continue
+    </button>
+  </form>
+-->

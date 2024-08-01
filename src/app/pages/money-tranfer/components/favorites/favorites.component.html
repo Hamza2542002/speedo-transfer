@@ -1,0 +1,30 @@
+<div class="modal-container bg-grey-0">
+  <div class="modal-header">
+    <img
+      src="../../../../../assets/Icons(SVG)/cancel.svg"
+      (click)="showFav.emit(false)"
+    />
+  </div>
+  <div class="modal-body">
+    <p class="favorites">
+      <mat-icon class="text-primary-300">star_outline</mat-icon>
+      <span class="text-primary-300 rg body">Favourite</span>
+      <mat-icon class="text-primary-300">chevron_right</mat-icon>
+    </p>
+    <ul class="favorite-list">
+      <li
+        class="favorite-item bg-grey-20"
+        *ngFor="let person of favorites"
+        (click)="selectFavorite(person)"
+      >
+        <div class="image bg-grey-40">
+          <img src="../../../../../assets/Icons(SVG)/bank.svg" class="avatar" />
+        </div>
+        <div>
+          <p class="name body text-grey-700">{{ person.name }}</p>
+          <p class="account body text-grey-100">{{ person.account }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

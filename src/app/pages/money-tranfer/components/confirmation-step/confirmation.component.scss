@@ -1,0 +1,67 @@
+@import "../../../../../styles/variables";
+.confirmation {
+  width: 500px;
+
+  .confirmation-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .confirmation-body {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .ammount {
+      padding: 10px 0;
+      border-bottom: 1px solid $color-grey-40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .trnsaction-info {
+      .from,
+      .to {
+        padding: 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin: 10px 0;
+
+        .image {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .indiv-info {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+
+      .icons {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      button {
+        padding: 12px 0;
+      }
+    }
+  }
+}
