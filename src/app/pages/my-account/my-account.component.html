@@ -1,6 +1,5 @@
 <!-- <p>my-account works!</p> -->
  <!-- page 1 -->
-<!-- my-account.component.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +42,6 @@
 
 
 <!-- page 2 -->
- <!-- my-account.component.html -->
 <section class="my-account">
   <div class="container">
     <div class="sidebar">
@@ -79,4 +77,103 @@
 </section>
 
 
+<!-- page 3 -->
+<section class="settings">
+    <div class="container">
+      <div class="sidebar">
+        <ul>
+          <li><a href="#">My profile</a></li>
+          <li><a href="#">Payments history</a></li>
+          <li class="active"><a href="#">Settings</a></li>
+          <li><a href="#">Change password</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h2>Settings</h2>
+        <div class="settings-tabs">
+          <ul class="tabs">
+            <li class="active"><a href="#profile">Profile</a></li>
+            <li><a href="#change-password">Change password</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="profile" class="tab-pane active">
+              <form>
+                <div class="form-group">
+                  <label for="userName">User name</label>
+                  <input type="text" id="userName" value="Jonathon">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last name</label>
+                  <input type="text" id="lastName" value="Smith">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" id="phone" value="+880125417624">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" value="jonathonsmith@gmail.com">
+                </div>
+                <button type="button" class="btn">Update Profile</button>
+              </form>
+            </div>
+            <div id="change-password" class="tab-pane">
+              <!-- Change password form content goes here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
+
+<!-- page 4 -->
+<section class="settings">
+  <div class="container">
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">My profile</a></li>
+        <li><a href="#">Payments history</a></li>
+        <li class="active"><a href="#">Settings</a></li>
+        <li><a href="#">Change password</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h2>Settings</h2>
+      <div class="settings-tabs">
+        <ul class="tabs">
+          <li class="active"><a href="#profile">Profile</a></li>
+          <li><a href="#change-password">Change password</a></li>
+        </ul>
+        <div id="change-password" class="tab-pane">
+          <form>
+            <div class="form-group">
+              <label for="currentPassword">Current password</label>
+              <input type="password" id="currentPassword" placeholder="Type here">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New password</label>
+              <input type="password" id="newPassword" placeholder="Type here">
+            </div>
+            <button type="button" class="btn">Update Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- page 5 -->
+  <section class="no-profile">
+    <div class="container">
+      <h2>No Profile</h2>
+      <div class="image-container">
+        <img src="path/to/404-image.png" alt="404 Image">
+      </div>
+      <p>A profile is required to perform this action. Please log in or create an account.</p>
+      <button class="btn" (click)="register()">Register Now</button>
+    </div>
+  </section>
+  

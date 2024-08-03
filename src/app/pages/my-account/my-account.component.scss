@@ -102,3 +102,245 @@
     }
   }
   
+
+
+  /* page 3 */
+.settings {
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+  
+    .sidebar {
+      width: 20%;
+      ul {
+        list-style-type: none;
+        padding: 0;
+        
+        li {
+          padding: 10px 0;
+          a {
+            text-decoration: none;
+            color: $primary-color;
+          }
+          
+          &.active a {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  
+    .content {
+      width: 80%;
+      padding-left: 20px;
+      
+      .settings-tabs {
+        .tabs {
+          list-style-type: none;
+          padding: 0;
+          display: flex;
+          margin-bottom: 20px;
+          
+          li {
+            margin-right: 20px;
+            
+            a {
+              text-decoration: none;
+              color: $primary-color;
+              padding: 10px;
+              border: 1px solid $primary-color;
+              border-radius: 5px;
+              
+              &.active {
+                background-color: $primary-color;
+                color: #fff;
+              }
+            }
+          }
+        }
+        
+        .tab-content {
+          .tab-pane {
+            display: none;
+            
+            &.active {
+              display: block;
+            }
+          }
+          
+          form {
+            .form-group {
+              margin-bottom: 15px;
+              
+              label {
+                display: block;
+                margin-bottom: 5px;
+              }
+              
+              input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid $primary-color;
+                border-radius: 5px;
+              }
+            }
+            
+            .btn {
+              background-color: $primary-color;
+              color: #fff;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              
+              &:hover {
+                background-color: darken($primary-color, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
+  /* page 4 */
+  .settings {
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+  
+    .sidebar {
+      width: 20%;
+      ul {
+        list-style-type: none;
+        padding: 0;
+        
+        li {
+          padding: 10px 0;
+          a {
+            text-decoration: none;
+            
+            &.active {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  
+    .content {
+      width: 80%;
+      padding-left: 20px;
+      
+      .settings-tabs {
+        .tabs {
+          list-style-type: none;
+          padding: 0;
+          display: flex;
+          margin-bottom: 20px;
+          
+          li {
+            margin-right: 20px;
+            
+            a {
+              text-decoration: none;
+              padding: 10px;
+              border: 1px solid;
+              border-radius: 5px;
+              
+              &.active {
+                background-color: $primary-color;
+                color: #fff;
+              }
+            }
+          }
+        }
+        
+        .tab-pane {
+          display: none;
+          
+          &.active {
+            display: block;
+          }
+        }
+        
+        form {
+          .form-group {
+            margin-bottom: 15px;
+            
+            label {
+              display: block;
+              margin-bottom: 5px;
+            }
+            
+            input {
+              width: 100%;
+              padding: 8px;
+              border: 1px solid;
+              border-radius: 5px;
+            }
+          }
+          
+          .btn {
+            background-color: $primary-color;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+            &:hover {
+              background-color: darken($primary-color, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+
+
+  /* page 5 */
+  .no-profile {
+    .container {
+      text-align: center;
+      padding: 40px;
+    }
+  
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    .image-container {
+      margin: 20px 0;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  
+    .btn {
+      background-color: $primary-color;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+  
