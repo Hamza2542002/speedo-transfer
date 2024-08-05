@@ -13,14 +13,21 @@
           transfers. Get started in minutes
         </p>
       </div>
-      <button class="btn-primary body">Create An Account</button>
+      <button class="btn-primary body" (click)="routeToregister()">
+        Create An Account
+      </button>
     </div>
-    <form action="" class="form bg-grey-0">
+    <form
+      [formGroup]="transferForm"
+      (ngSubmit)="onSubmit()"
+      class="form bg-grey-0"
+    >
       <div class="your-sent">
         <label for="">You Send</label>
         <div class="input-group">
           <input
-            (change)="getCurrency($event)"
+            formControlName="sendAmount"
+            (input)="getCurrency($event)"
             type="text"
             class="body text-grey-100"
             placeholder="1000"
@@ -30,12 +37,24 @@
             (selected)="onSelectFromCurrency($event)"
           ></app-custome-select>
         </div>
+        <div
+          class="text-danger-300"
+          *ngIf="transferForm.get('sendAmount')?.invalid && transferForm.dirty"
+        >
+          <small *ngIf="transferForm.get('sendAmount')?.errors?.['required']"
+            >Amount is required.</small
+          >
+          <small *ngIf="transferForm.get('sendAmount')?.errors?.['pattern']"
+            >Invalid amount.</small
+          >
+        </div>
       </div>
       <div class="recipient">
         <label for="">Recipient gets</label>
         <div class="input-group">
           <input
             type="text"
+            formControlName="receiveAmount"
             [value]="ammount.toFixed(2)"
             class="body text-grey-100"
             placeholder="7200"
@@ -52,7 +71,7 @@
       <button
         type="submit"
         class="btn-primary body md"
-        (click)="routeToMonyrTransfer()"
+        [disabled]="transferForm.invalid"
       >
         Continue
       </button>

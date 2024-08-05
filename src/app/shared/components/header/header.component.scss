@@ -2,6 +2,10 @@
 header {
   padding: 16px 0;
 
+  .icon {
+    cursor: pointer;
+  }
+
   nav.container-fluid {
     display: flex;
     justify-content: space-between;
@@ -9,7 +13,7 @@ header {
 
     & > div {
       display: flex;
-      gap: 25px;
+      gap: 60px;
       align-items: center;
 
       ul.nav-links {
@@ -24,6 +28,12 @@ header {
           color: $color-primary-300 !important;
         }
       }
+    }
+
+    .links-container {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 30px;
     }
   }
 }

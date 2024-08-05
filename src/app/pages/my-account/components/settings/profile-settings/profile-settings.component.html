@@ -1,0 +1,95 @@
+<div class="content">
+  <div class="tab-content">
+    <div id="profile" class="tab-pane active">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="form-input">
+          <div class="form-group">
+            <label for="userName" class="text-grey-900 body">User name</label>
+            <input
+              formControlName="userName"
+              class="text-grey-500 body-2"
+              type="text"
+              id="userName"
+            />
+            <div *ngIf="profileForm.get('userName')?.invalid && isSubmitted">
+              <small
+                *ngIf="profileForm.get('userName')?.errors?.['required']"
+                class="text-danger-300"
+                >User name is required.</small
+              >
+              <small
+                *ngIf="profileForm.get('userName')?.errors?.['minlength']"
+                class="text-danger-300"
+                >User name must be at least 2 characters long.</small
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName" class="text-grey-900 body">Last Name</label>
+            <input
+              formControlName="lastName"
+              class="text-grey-500 body-2"
+              type="text"
+              id="lastName"
+            />
+            <div *ngIf="profileForm.get('lastName')?.invalid && isSubmitted">
+              <small
+                *ngIf="profileForm.get('lastName')?.errors?.['required']"
+                class="text-danger-300"
+                >Last name is required.</small
+              >
+              <small
+                *ngIf="profileForm.get('lastName')?.errors?.['minlength']"
+                class="text-danger-300"
+                >Last name must be at least 2 characters long.</small
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone" class="text-grey-900 body">Phone</label>
+            <input
+              formControlName="phone"
+              class="text-grey-500 body-2"
+              type="text"
+              id="phone"
+            />
+            <div *ngIf="profileForm.get('phone')?.invalid && isSubmitted">
+              <small
+                *ngIf="profileForm.get('phone')?.errors?.['required']"
+                class="text-danger-300"
+                >Phone number is required.</small
+              >
+              <small
+                *ngIf="profileForm.get('phone')?.errors?.['pattern']"
+                class="text-danger-300"
+                >Phone number must be in the format +880123456789.</small
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="text-grey-900 body">Email</label>
+            <input
+              formControlName="email"
+              class="text-grey-500 body-2"
+              type="text"
+              id="email"
+            />
+            <div *ngIf="profileForm.get('email')?.invalid && isSubmitted">
+              <small
+                *ngIf="profileForm.get('email')?.errors?.['required']"
+                class="text-danger-300"
+                >Email is required.</small
+              >
+              <small
+                *ngIf="profileForm.get('email')?.errors?.['email']"
+                class="text-danger-300"
+                >Email must be a valid email address.</small
+              >
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Update Profile</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -24,11 +24,10 @@ export class CustomeDateInputComponent {
   isYearDropdownOpen = false;
 
   countries = [
-    'United States',
-    'Canada',
-    'United Kingdom',
-    'Australia',
-    'EGYPT',
+    { name: 'United States', value: 'USA' },
+    { name: 'Canada', value: 'CAN' },
+    { name: 'United Kingdom', value: 'UK' },
+    { name: 'EGYPT', value: 'EGY' },
   ];
 
   months = [

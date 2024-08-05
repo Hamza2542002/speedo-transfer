@@ -15,9 +15,24 @@
         <li>
           <a
             class="body md text-grey-700"
+            *ngIf="index == 1"
             routerLinkActive="active"
             routerLink="ammount"
             ><span class="bg-grey-700"></span>Ammount</a
+          >
+          <a
+            class="body md text-grey-700"
+            routerLinkActive="active"
+            routerLink="confirmation"
+            *ngIf="index == 2"
+            ><span class="bg-grey-700"></span>Confirmation</a
+          >
+          <a
+            class="body md text-grey-700"
+            routerLinkActive="active"
+            routerLink="payment"
+            *ngIf="index == 3"
+            ><span class="bg-grey-700"></span>Payment</a
           >
         </li>
       </ul>

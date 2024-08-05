@@ -53,14 +53,9 @@
             />
             <div *ngIf="loginForm.controls['email'].invalid && submitted">
               <small
-                *ngIf="loginForm.controls['email'].errors?.['required']"
+                *ngIf="loginForm.get('email')?.invalid"
                 class="text-danger-300"
-                >Email is required.</small
-              >
-              <small
-                *ngIf="loginForm.controls['email'].errors?.['email']"
-                class="text-danger-300"
-                >Invalid email address.</small
+                >{{ getEmailErrorMessage() }}</small
               >
             </div>
           </div>
@@ -91,20 +86,21 @@
             </div>
             <div *ngIf="loginForm.controls['password'].invalid && submitted">
               <small
-                *ngIf="loginForm.controls['password'].errors?.['required']"
+                *ngIf="loginForm.get('password')?.invalid"
                 class="text-danger-300"
-                >Password is required.</small
-              >
-              <small
-                *ngIf="loginForm.controls['password'].errors?.['password']"
-                class="text-danger-300"
-                >Invalid Password.</small
+                >{{ getPasswordErrorMessage() }}</small
               >
             </div>
           </div>
         </div>
 
-        <button type="submit" class="btn-primary body">Login</button>
+        <button
+          type="submit"
+          class="btn-primary body"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
         <p class="text-grey-500 body">
           Don’t have an account?
           <a

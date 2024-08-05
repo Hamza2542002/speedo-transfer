@@ -12,20 +12,20 @@ import { CurrencyModule } from '../../../model/currency/currency.module';
   styleUrl: './custome-select.component.scss',
 })
 export class CustomeSelectComponent {
-  @Output() selected: EventEmitter<CurrencyModule> = new EventEmitter();
-  @Input() default!: CurrencyModule;
-
+  @Output() selected: EventEmitter<string> = new EventEmitter();
+  @Input() default!: string;
   isDropdownOpen = false;
-  selectedCurrency: CurrencyModule = {
-    label: 'USD',
-    img: '../../../../assets/Vectors/flags/states.svg',
+  selectedCurrency = 'USD';
+  currencyicons = {
+    USD: '../../../../assets/Vectors/flags/states.svg',
+    EUR: '../../../../assets/Vectors/flags/states.svg',
+    EGP: '../../../../assets/Vectors/flags/egypt.svg',
   };
+  currencyIconsMap = new Map<string, string>(
+    Object.entries(this.currencyicons),
+  );
 
-  currencies = [
-    { label: 'USD', img: '../../../../assets/Vectors/flags/states.svg' },
-    { label: 'EUR', img: '../../../../assets/Vectors/flags/states.svg' },
-    { label: 'EGP', img: '../../../../assets/Vectors/flags/egypt.svg' },
-  ];
+  currencies = ['USD', 'EUR', 'EGP'];
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
@@ -35,7 +35,7 @@ export class CustomeSelectComponent {
     this.isDropdownOpen = false;
   }
 
-  selectCurrency(currency: CurrencyModule) {
+  selectCurrency(currency: string) {
     this.selectedCurrency = currency;
     this.selected.emit(currency);
     this.closeDropdown();

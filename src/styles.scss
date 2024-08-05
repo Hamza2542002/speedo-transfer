@@ -142,12 +142,14 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 16px 8px;
+  border-radius: 6.5px;
+  font-size: 16px;
 }
 
 button.btn-primary {
   background-color: $color-primary-300;
+
   color: $color-grey-0;
   border: 1px solid $color-primary-300;
 }

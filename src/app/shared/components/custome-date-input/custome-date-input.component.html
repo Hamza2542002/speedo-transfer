@@ -91,9 +91,9 @@
       <div
         class="bg-grey-0"
         *ngFor="let country of countries"
-        (click)="selectCountry(country)"
+        (click)="selectCountry(country.value)"
       >
-        {{ country }}
+        {{ country.name }}
       </div>
     </div>
   </div>

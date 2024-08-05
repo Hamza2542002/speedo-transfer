@@ -1,0 +1,17 @@
+.balance {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin: 16px 0;
+}
+
+table.details tr {
+  margin: 10px 0;
+  td {
+    padding: 15px 0;
+    &:last-child {
+      padding-left: 25px;
+    }
+  }
+}

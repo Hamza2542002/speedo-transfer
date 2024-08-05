@@ -48,16 +48,9 @@
               email
             />
             <div *ngIf="registerForm.controls['email'].invalid && submitted">
-              <small
-                *ngIf="registerForm.controls['email'].errors?.['required']"
-                class="text-danger-300"
-                >Email is required.</small
-              >
-              <small
-                *ngIf="registerForm.controls['email'].errors?.['email']"
-                class="text-danger-300"
-                >Invalid email address.</small
-              >
+              <small class="text-danger-300">{{
+                getEmailErrorMessage()
+              }}</small>
             </div>
           </div>
           <div class="input-group">
@@ -88,6 +81,21 @@
                   type="year"
                 ></app-custome-date-input>
               </div>
+              <div *ngIf="registerForm.controls['day'].invalid && submitted">
+                <small class="text-danger-300">{{
+                  getDayErrorMessage()
+                }}</small>
+              </div>
+              <div *ngIf="registerForm.controls['month'].invalid && submitted">
+                <small class="text-danger-300">{{
+                  getMonthErrorMessage()
+                }}</small>
+              </div>
+              <div *ngIf="registerForm.controls['year'].invalid && submitted">
+                <small class="text-danger-300">{{
+                  getYearErrorMessage()
+                }}</small>
+              </div>
             </div>
           </div>
           <div class="input-group">
@@ -116,19 +124,9 @@
               />
             </div>
             <div *ngIf="registerForm.controls['password'].invalid && submitted">
-              <small
-                *ngIf="registerForm.controls['password'].errors?.['required']"
-                class="text-danger-300"
-                >Password is required.</small
-              >
-              <small
-                *ngIf="
-                  registerForm.controls['password']?.hasError('strongPassword')
-                "
-                class="text-danger-300"
-                >Password must be at least 8 characters long, include upper and
-                lower case letters, a number, and a special character.</small
-              >
+              <small class="text-danger-300">{{
+                getPasswordErrorMessage()
+              }}</small>
             </div>
           </div>
           <div class="input-group">
@@ -137,7 +135,7 @@
               <input
                 formControlName="confirmPassword"
                 class="input text-grey-100"
-                (input)="confirmPassword()"
+                (input)="checkPasswords()"
                 [type]="isPasswordVisible1 ? 'text' : 'password'"
                 placeholder="********"
                 password
@@ -159,14 +157,11 @@
             </div>
             <div *ngIf="registerForm.controls['password'].invalid && submitted">
               <small
-                *ngIf="registerForm.controls['password'].errors?.['required']"
+                *ngIf="registerForm.get('confirmPassword')?.invalid"
                 class="text-danger-300"
-                >Password is required.</small
+                >{{ getConfirmPasswordErrorMessage() }}</small
               >
             </div>
-            <small *ngIf="errorMessage" class="text-danger-300">{{
-              errorMessage
-            }}</small>
           </div>
         </div>
 

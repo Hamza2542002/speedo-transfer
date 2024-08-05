@@ -1,0 +1,25 @@
+<p class="title-sm-2 sb">Profile</p>
+<div class="profile-info">
+  <div class="balance">
+    <h1>{{ account.balance }}$</h1>
+    <span class="text-primary-300 title-sm-0 sb">Balance</span>
+  </div>
+  <table class="details">
+    <tr>
+      <td class="text-grey-700 md">First Name:</td>
+      <td class="text-grey-300">{{ user.firstName }} {{ user.lastName }}</td>
+    </tr>
+    <tr>
+      <td class="text-grey-700 md">Email:</td>
+      <td class="text-grey-300">{{ user.email }}</td>
+    </tr>
+    <tr>
+      <td class="text-grey-700 md">Phone:</td>
+      <td class="text-grey-300">{{ user.phoneNumber }}</td>
+    </tr>
+    <tr>
+      <td class="text-grey-700 md">Gender:</td>
+      <td class="text-grey-300">{{ user.gender }}</td>
+    </tr>
+  </table>
+</div>

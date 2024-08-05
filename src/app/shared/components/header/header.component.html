@@ -1,8 +1,10 @@
 <header>
   <nav class="container-fluid">
-    <p class="title-sm-0 text-grey-900">Speedo Transfer</p>
+    <p class="title-sm-0 text-grey-900 icon" (click)="routToHome()">
+      Speedo Transfer
+    </p>
 
-    <div class="">
+    <div class="links-container">
       <ul class="nav-links">
         <li>
           <a
@@ -21,18 +23,23 @@
           >
         </li>
         <li>
-          <a class="text-grey-700 body-m" routerLinkActive="active" href=""
+          <a
+            class="text-grey-700 body-m"
+            routerLinkActive="active"
+            routerLink="/myaccount"
             >My Account</a
           >
         </li>
       </ul>
-      <div *ngIf="!user" class="btn-group">
+
+      <div *ngIf="isLoggedIn === null" class="btn-group">
         <button class="btn-outlined" (click)="routToLogin()">Login</button>
         <button class="btn-primary" (click)="routeToRegester()">
           Register Now
         </button>
       </div>
-      <app-user *ngIf="user"></app-user>
+
+      <app-user *ngIf="isLoggedIn"></app-user>
     </div>
   </nav>
 </header>

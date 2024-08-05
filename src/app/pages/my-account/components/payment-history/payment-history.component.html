@@ -1,0 +1,37 @@
+<div>
+  <p class="title-sm-2 sb">Payment History</p>
+  <ul class="payment-history">
+    <li
+      class="payment-details"
+      *ngFor="let transaction of accountTransactions; let i = index"
+    >
+      <div class="bg-primary-50 text-grey-900 body md account-num">
+        <p class="body">
+          Account Number:
+          <input
+            type="text"
+            [value]="message(transaction.fromAccount)"
+            readonly
+          />
+        </p>
+        <mat-icon
+          *ngIf="!isCopied[i]"
+          [cdkCopyToClipboard]="message(transaction.fromAccount)"
+          (click)="copyAccountNumber(transaction.fromAccount, i)"
+          class="text-grey-100"
+          >content_copy</mat-icon
+        >
+        <mat-icon *ngIf="isCopied[i]" class="text-grey-100">done</mat-icon>
+      </div>
+      <div class="info">
+        <p class="text-grey-900 body md acc-details">
+          <span>Account Details:</span
+          ><span>Total Price : {{ transaction.convertedAmount }} USD</span>
+        </p>
+        <p class="text-grey-600 body-2 md acc-details">
+          <span>Recipient Name </span> <span>{{ transaction.toAccount }}</span>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

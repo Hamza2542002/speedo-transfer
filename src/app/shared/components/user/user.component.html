@@ -4,14 +4,26 @@
   appClickOutside
   (clickOutside)="closeDropdown()"
 >
-  <img class="user-image" [src]="user.image" alt="" />
-  <p class="sb text-grey-700">{{ user.name }}</p>
+  <p class="user-image bg-grey-40 sb text-grey-700">
+    {{ user?.firstName?.[0] }}{{ user?.lastName?.[0] }}
+  </p>
+  <p class="md text-grey-700">{{ user?.firstName }}</p>
   <mat-icon aria-label="Dropdown arrow" fontIcon="expand_more"></mat-icon>
-  <ul *ngIf="isDropdownOpen" class="dropdown-content">
-    <li><a class="text-grey-700" href="">My Account</a></li>
-    <li><a class="text-grey-700" href="">Payment History</a></li>
-    <li><a class="text-grey-700" href="">Setting</a></li>
-    <li><a class="text-grey-700" href="">Change Password</a></li>
-    <li><a class="text-grey-700" href="">Logout</a></li>
+  <ul *ngIf="isDropdownOpen" class="dropdown-content text-grey-700">
+    <li><a class="text-grey-700" routerLink="/myaccount">My Account</a></li>
+    <li>
+      <a class="text-grey-700" routerLink="/myaccount/payment-history"
+        >Payment History</a
+      >
+    </li>
+    <li>
+      <a class="text-grey-700" routerLink="/myaccount/settings">Setting</a>
+    </li>
+    <li>
+      <a class="text-grey-700" routerLink="/myaccount/change-password"
+        >Change Password</a
+      >
+    </li>
+    <li><a class="text-grey-700" (click)="logout()">Logout</a></li>
   </ul>
 </div>

@@ -3,7 +3,8 @@
     <mat-icon class="text-grey-0">check</mat-icon>
     <p class="title-2 sb text-grey-900">Your transfer was successful</p>
     <h2 class="text-grey-900">
-      48.4220 <span class="text-primary-300">EGP</span>
+      {{ stepDate.toAmount }}
+      <span class="text-primary-300">{{ stepDate.toCurrency }}</span>
     </h2>
   </div>
   <div class="confirmation-body">
@@ -27,20 +28,29 @@
         </div>
         <div class="indiv-info">
           <p class="body text-primary-300">From</p>
-          <p class="name body sb text-grey-700">Asmaa Dosuky</p>
-          <p class="account body-2 text-grey-100">Account xxxx7890</p>
+          <p class="name body sb text-grey-700">{{ stepDate.recipientName }}</p>
+          <p class="account body-2 text-grey-100">
+            Account xxxx{{
+              stepDate.recipientAccount.substring(
+                stepDate.recipientAccount.length - 5
+              )
+            }}
+          </p>
         </div>
       </div>
     </div>
     <div>
       <div class="ammount text-grey-500">
         <p class="body text-grey-500">Total ammount</p>
-        <p class="body text-grey-500">48.4220 EGP</p>
+        <p class="body text-grey-500">
+          {{ stepDate.toAmount }} {{ stepDate.toCurrency }}
+        </p>
       </div>
       <div class="ammount text-grey-500">
         <p class="body text-grey-500">Fees</p>
         <p class="body text-grey-500 fees bg-grey-40">
-          18.9 USD <mat-icon>chevron_right</mat-icon>
+          {{ stepDate.fromAmount }} {{ stepDate.formCurrency }}
+          <mat-icon>chevron_right</mat-icon>
         </p>
       </div>
     </div>
