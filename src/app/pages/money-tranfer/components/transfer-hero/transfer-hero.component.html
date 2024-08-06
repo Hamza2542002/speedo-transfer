@@ -2,12 +2,13 @@
   <span class="overlay bg-primary-50"></span>
   <div class="container-fluid">
     <div>
-      <h3 class="text-grey-900 sb">Money Transfer</h3>
+      <h3 class="text-grey-900 sb" *ngIf="!message">Money Transfer</h3>
+      <h3 class="text-grey-900 sb" *ngIf="message">My Account</h3>
       <ul class="links">
         <li>
           <a href="" class="body md text-grey-700" routerLink="/home">Home</a>
         </li>
-        <li>
+        <li *ngIf="!message">
           <a class="body md text-grey-700"
             ><span class="bg-grey-700"></span>About Us</a
           >
@@ -15,23 +16,29 @@
         <li>
           <a
             class="body md text-grey-700"
-            *ngIf="index == 1"
+            *ngIf="index == 1 && !message"
             routerLinkActive="active"
             routerLink="ammount"
             ><span class="bg-grey-700"></span>Ammount</a
           >
           <a
+            *ngIf="message"
+            class="body md text-grey-700 active"
+            routerLink="/my-account"
+            ><span class="bg-grey-700"></span>My Account</a
+          >
+          <a
             class="body md text-grey-700"
             routerLinkActive="active"
             routerLink="confirmation"
-            *ngIf="index == 2"
+            *ngIf="index == 2 && !message"
             ><span class="bg-grey-700"></span>Confirmation</a
           >
           <a
             class="body md text-grey-700"
             routerLinkActive="active"
             routerLink="payment"
-            *ngIf="index == 3"
+            *ngIf="index == 3 && !message"
             ><span class="bg-grey-700"></span>Payment</a
           >
         </li>

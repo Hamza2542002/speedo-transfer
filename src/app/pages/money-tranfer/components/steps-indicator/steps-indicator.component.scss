@@ -45,7 +45,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid $color-grey-100;
+  border: 3px solid $color-grey-100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +63,7 @@
 
 .line {
   display: block;
-  height: 2px;
+  height: 3px;
   background-color: $color-grey-100;
   margin: 0 10px;
 }

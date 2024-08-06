@@ -31,9 +31,7 @@ header {
     }
 
     .links-container {
-      display: grid;
-      grid-template-columns: 1fr 220px;
-      gap: 30px;
+      gap: 0;
     }
   }
 }

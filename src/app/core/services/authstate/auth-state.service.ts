@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, OnInit, PLATFORM_ID } from '@angular/core';
+import { Inject, Injectable, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -13,9 +13,7 @@ export class AuthStateService {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       this.token = localStorage.getItem('authToken');
-      this.authState.next(this.token ? true : false);
-    } else {
-      // this.authState = new BehaviorSubject<boolean>(false);
+      this.authState.next(this.token ? true : null);
     }
   }
 

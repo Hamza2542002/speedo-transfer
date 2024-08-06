@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivate(): boolean {
     let isAuth: boolean = false;
-    this.authState.getAuthState().subscribe((auth) => {
+    this.authState.authState$.subscribe((auth) => {
       if (!auth) {
         this.router.navigate(['/login']);
         isAuth = false;
@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
   canActivateChild(): boolean {
     let isAuth: boolean = false;
-    this.authState.getAuthState().subscribe((auth) => {
+    this.authState.authState$.subscribe((auth) => {
       if (!auth) {
         this.router.navigate(['/login']);
         isAuth = false;

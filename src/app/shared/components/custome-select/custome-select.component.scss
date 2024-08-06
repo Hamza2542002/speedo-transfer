@@ -34,10 +34,11 @@
 
   div {
     padding: 16px 8px;
-    max-width: 98px;
+    // max-width: 98px;
+    gap: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     cursor: pointer;
 
     &:hover {

@@ -9,6 +9,7 @@ import { UserService } from '../../services/user/user.service';
 import { MyAccountService } from './services/my-account.service';
 import { AccountModule } from '../../model/account/account.module';
 import { AccountService } from '../../services/account/account.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-my-account',
@@ -19,11 +20,13 @@ import { AccountService } from '../../services/account/account.service';
     TransferHeroComponent,
     RouterModule,
     SideBarComponent,
+    CommonModule,
   ],
   templateUrl: './my-account.component.html',
   styleUrl: './my-account.component.scss',
 })
 export class MyAccountComponent implements OnInit {
+  message = 'My Account';
   user!: UserModule | null;
   account!: AccountModule;
   constructor(

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { WarningMessageComponent } from '../warning-message/warning-message.component';
 import { AuthService } from '../../core/services/auth.service';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,7 +26,7 @@ import { UserService } from '../../services/user/user.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   showWarning: boolean = false;
   loginAgain: boolean = false;
   showForm!: boolean;
@@ -41,6 +41,7 @@ export class LoginComponent {
     private authService: AuthService,
     private authState: AuthStateService,
     private router: Router,
+    private route: ActivatedRoute,
     private userSevice: UserService,
   ) {
     this.loginForm = this.fb.group({
@@ -48,6 +49,15 @@ export class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe((params: any) => {
+      if (params.timeOut) {
+        this.showWarning = true;
+      }
+    });
+  }
+
   getEmailErrorMessage() {
     const emailControl = this.loginForm.get('email');
     if (emailControl?.hasError('required')) {
@@ -71,10 +81,6 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       // call pai to authenticate user
       const { email, password } = this.loginForm.value;
-      // this.authState.login('jjkhasdjksha');
-      // this.router.navigate(['/home']);
-      // this.userSevice.getCurrentUser(1);
-
       this.authService.login(email, password).subscribe(
         (response) => {
           console.log(response);
