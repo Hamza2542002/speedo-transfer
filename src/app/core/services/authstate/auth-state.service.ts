@@ -17,6 +17,10 @@ export class AuthStateService {
     }
   }
 
+  setAuthState(state : boolean | null){
+    this.authState.next(state)
+  }
+
   getAuthState() {
     return this.authState;
   }

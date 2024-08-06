@@ -9,7 +9,8 @@ export const TRANSFER_MONEY_ROUTES: Routes = [
   {
     path: 'confirmation',
     component: ConfirmationComponent,
+    canActivate: [AuthGuard],
   },
-  { path: 'payment', component: PaymentComponent },
+  { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: 'ammount', pathMatch: 'full' },
 ];

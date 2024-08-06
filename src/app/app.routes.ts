@@ -36,8 +36,6 @@ export const routes: Routes = [
         (m) => m.MoneyTranferComponent,
       ),
     children: TRANSFER_MONEY_ROUTES,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
   },
   {
     path: 'myaccount',

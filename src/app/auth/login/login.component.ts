@@ -12,7 +12,7 @@ import { AuthService } from '../../core/services/auth.service';
 import { MatIconModule } from '@angular/material/icon';
 import { AuthStateService } from '../../core/services/authstate/auth-state.service';
 import { UserService } from '../../services/user/user.service';
-
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
     private authState: AuthStateService,
     private router: Router,
     private route: ActivatedRoute,
+    private location : Location,
     private userSevice: UserService,
   ) {
     this.loginForm = this.fb.group({
@@ -89,7 +90,8 @@ export class LoginComponent implements OnInit {
           console.log(decodedToken);
           this.authState.login(token);
           this.userSevice.getCurrentUser(decodedToken.payload.id);
-          this.router.navigate(['/home']);
+          // this.router.navigate(['/home']);
+          this.location.back()
         },
         (error) => {
           console.log(error);
@@ -139,7 +141,8 @@ export class LoginComponent implements OnInit {
   }
 
   closeForm() {
-    this.router.navigate(['home']);
+    // this.router.navigate(['home']);
+    this.location.back()
     this.showForm = false;
   }
 

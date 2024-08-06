@@ -41,15 +41,21 @@ export class AppComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
   ngOnInit() {
-    this.authState.authState$.subscribe((value) => {
-      if (value) {
-        this.resetTimer();
-        this.logedIn = value;
+    this.authState.authState$.subscribe((response) => {
+      if (response) {
         const id = (
           this.authState.decodeJWT(this.authState.token as string) as any
         ).payload.id;
-        this.userService.getCurrentUser(id);
-        this.accountService.getAccount(id);
+        
+          this.userService.getCurrentUser(id).subscribe(value=>{
+            console.log(value)
+          }, (error) =>{
+            this.authState.setAuthState(null)
+          });
+          this.accountService.getAccount(id);
+          this.resetTimer();
+          this.logedIn = response;
+        
       }
     });
   }

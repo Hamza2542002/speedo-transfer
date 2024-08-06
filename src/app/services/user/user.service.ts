@@ -21,7 +21,7 @@ export class UserService {
     }
   }
 
-  setUser(user: UserModule) {
+  setUser(user: UserModule | null) {
     this.currentUser.next(user);
   }
 
@@ -42,6 +42,8 @@ export class UserService {
       .subscribe((value) => {
         this.setUser(value);
         console.log(value);
+      }, error =>{
+        this.setUser(null)
       });
     return this._http.get<UserModule>(`${this.BASE_URL}/${id}`, {});
     // this.currentUser = {
